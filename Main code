@@ -1,0 +1,14 @@
+lotto=[]
+
+import random 
+
+num = random.randint(1, 45)
+
+lotto.append(num)
+
+while len(lotto)<=6:
+    lotto.append(num)
+    num=random.randint(1,45)
+    lotto=list(set(lotto))
+
+print(lotto)
