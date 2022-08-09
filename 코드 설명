@@ -1,0 +1,21 @@
+# 로또 번호를 추가할 리스트 생성
+lotto=[]
+
+import random 
+
+# Python random 라이브러리의 randint() 함수로 난수 생성
+num = random.randint(1, 45)
+
+# 생성된 난수를 리스트 변수에 추가
+lotto.append(num)
+
+# 로또 리스트의 원소가 6개가 될 때까지 반복
+while len(lotto)<=6:
+    lotto.append(num)
+    
+    # 로또 번호 재생성
+    num=random.randint(1,45)
+    lotto=list(set(lotto)) # 중복 제거 및 리스트화
+
+# 중복 원소가 제거된 6자리 로또 번호 출력
+print(lotto)
